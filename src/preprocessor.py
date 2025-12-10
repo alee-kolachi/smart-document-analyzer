@@ -11,7 +11,6 @@ class Preprocessor:
         self.image = cv2.imread(image_path)
         if self.image is None:
             logging.error("Error: Could not read image file")
-        print(self.image)
         return self.image
     
     def to_grayscale(self, image):
@@ -44,12 +43,12 @@ class Preprocessor:
 
     
 
+if __name__ == "__main__":
 
+    image_path = "../images/a.jpg"
+    obj = Preprocessor()
 
-image_path = "../images/a.jpg"
-obj = Preprocessor()
-
-cv2.imshow("Original Image", cv2.imread(image_path))
-cv2.imshow("Denoised Image", obj.preprocess(image_path=image_path))
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+    cv2.imshow("Original Image", cv2.imread(image_path))
+    cv2.imshow("Denoised Image", obj.preprocess(image_path=image_path))
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

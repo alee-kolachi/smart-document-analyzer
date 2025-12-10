@@ -6,12 +6,11 @@ class OCREngine:
     def __init__(self):
         pass
     
-    def run_ocr(self, image_path):
+    def run_ocr(self, image):
         # return raw text + boxes + confidence
-        img = cv2.imread(image_path)
-        raw_text = pytesseract.image_to_string(img)
+        raw_text = pytesseract.image_to_string(image)
 
-        data_df = pytesseract.image_to_data(img, output_type=pytesseract.Output.DATAFRAME)    
+        data_df = pytesseract.image_to_data(image, output_type=pytesseract.Output.DATAFRAME)    
         words_data = data_df[data_df.conf != -1]
         words_data = words_data.dropna(subset = ['text'])
 
