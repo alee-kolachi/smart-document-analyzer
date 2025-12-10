@@ -36,4 +36,4 @@ if __name__ == "__main__":
     image_path = "../images/invoice.webp"
 
     obj = OCREngine()
-    print(obj.run_ocr(image_path)["blocks"])
+    print(obj.run_ocr(image_path)["raw_text"])

@@ -20,8 +20,9 @@ class Classifier:
             return "unknown"
 
 
-image_path = "../images/invoice.webp"
-ocr_object = OCREngine()
-raw_text = ocr_object.run_ocr(image_path=image_path)["raw_text"]
-classifier = Classifier()
-print(classifier.classify_test(raw_text=raw_text))
+if __name__ == "__main__":
+    image_path = "../images/invoice.webp"
+    ocr_object = OCREngine()
+    raw_text = ocr_object.run_ocr(image_path=image_path)["raw_text"]
+    classifier = Classifier()
+    print(classifier.classify_test(raw_text=raw_text))
