@@ -1,9 +1,9 @@
 from fastapi import FastAPI, File, UploadFile
 
-from preprocessor import Preprocessor
-from ocr_engine import OCREngine
-from extractor import Extractor
-from classifier import Classifier
+from src.preprocessor import Preprocessor
+from src.ocr_engine import OCREngine
+from src.extractor import Extractor
+from src.classifier import Classifier
 
 app = FastAPI()
 

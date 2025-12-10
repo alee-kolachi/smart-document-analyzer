@@ -1,4 +1,4 @@
-from ocr_engine import OCREngine
+from src.ocr_engine import OCREngine
 
 class Classifier:
     def __init__(self):
